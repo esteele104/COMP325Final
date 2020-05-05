@@ -78,13 +78,33 @@ if($result->num_rows > 0){
         echo "<br>";
     }
 }
-    $conn->close();
+   
     ?>
 </div>
 
 <div id="Store" class="tabcontent">
   <h3>All items</h3>
-  <p>This is where all the items will be.</p>
+   <?php
+     $sql = "SELECT * FROM items";
+
+    $result = $conn->query($sql);
+    $records = array();
+
+
+if($result->num_rows > 0){
+   //Loop through all our records and add them to our array
+    while($r = $result->fetch_assoc())
+    {
+        $ID = $r["ID"];
+        echo $r["Name"];
+        echo "<br>";
+        echo "<b>","$",$r["Price"], "</b>";
+        echo '<button onclick=addItem(event,',$ID,')>Add to Cart</button>';
+        echo "<br>";
+    }
+}
+    $conn->close();
+    ?>
 </div>
     
     <div id="Cart" class="tabcontent">
