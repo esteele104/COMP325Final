@@ -1,0 +1,61 @@
+#search{
+    text-align:center;
+}
+
+#textbox{
+    border-radius:20px;
+    text-align:center;
+    width:400px;
+    height:30px;
+    font-size:12pt;
+    margin-top:20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title{
+    color:#b31111;
+    text-decoration:none;
+    font-family:'Permanent Marker', cursive;
+    font-size:25pt;
+    padding-left:15px;
+    padding-right:15px;
+    align-self:left;
+    margin-right:800px;
+}
+
+.title2{
+    color:#ffffff;
+    text-decoration:none;
+    font-family:'Permanent Marker', cursive;
+    font-size:25pt;
+    padding-left:15px;
+    padding-right:15px;
+    align-self:left;
+}
+.icon{
+    padding-left:15px;
+    padding-right:15px;
+    align-self:right;
+}
+
+#bar{
+    background-color:#b31111;
+    padding:15px;
+    margin-top:40px;
+    text-align:center;
+}
+
+.section{
+    color:#ffffff; 
+    font-size:15pt; 
+    padding-right:70px; 
+    padding-left:70px;
+    text-decoration:none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.iconName{
+    color:#ffffff;
+    font-size:15pt;
+
+}
