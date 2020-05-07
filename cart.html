@@ -20,5 +20,23 @@
         <div id="bar">
             <a class="title2">Shopping Cart</a>  
         </div>
+        <div>
+            <button type="button" id="checkoutButton" style="cursor: pointer;">Checkout</button>
+        </div>
+        <div class="checkoutPopup">
+            <div class="content">
+                <div class="close">+</div>
+                <form>
+                    <p id="enter">Enter Your:</p>
+                    <input class="input" id="name" type="text" placeholder="Name (First M. Last)" style="width:200px;" required>
+                    <input class="input" id="creditCard" type="text" placeholder="Card (0000-0000-0000-0000)" style="width:200px;" pattern="[0-9]{16}" required>
+                    <input class="input" id="exp" type="text" placeholder="Exp Date (00/00)" style="width:117px;" pattern="[0-9][0-9]/[0-9][0-9]$" required>
+                    <input class="input" id="cvv" type="text" placeholder="CVV (000)" style="width:75px;" pattern="[0-9]{3}" required>
+                    <input class="input" id="emailAddress" type="text" placeholder="Email (email@example.com)" style="width:200px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <input type="submit" id="submit" style="position: absolute; top:325px; left:190px; height:30px; width:80px;">
+                </form>
+            </div>
+        </div>
+        <script src="JavaScript.js"></script>
     </body>
 </html>
