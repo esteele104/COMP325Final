@@ -69,3 +69,13 @@
   font-size: 10px;
   position: relative;
 }
+a{
+    color:black;
+    font-size:16pt;
+}
+h1{
+    color:black;
+    text-decoration: underline;
+    font-family:'Permanent Marker', cursive;
+    font-size:25pt;
+}
