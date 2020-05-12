@@ -51,7 +51,7 @@
  
 
 <div class="tab">
-    <button style ="font-size: 120%;" class="tablinks" onclick="document.location = 'index.html'"><i class="fas fa-home"></i></button> 
+    <button style ="font-size: 120%;" class="tablinks" onclick="document.location = 'index.php'"><i class="fas fa-home"></i></button> 
   <button class="tablinks" onclick="openCity(event, 'Recipes')">Recipes</button>
   <button class="tablinks" onclick="openCity(event, 'Store')">Store</button>
     <button style ="font-size: 120%;" class="tablinks" onclick="openCity(event, 'Cart')"><i class="fas fa-shopping-cart"></i></button> 

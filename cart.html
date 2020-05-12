@@ -1,16 +1,17 @@
+<script src="scripts.js"></script>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ProjectName - Shopping Cart</title>
+        <title>Group 5's Recipe Shop - Shopping Cart</title>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Permanent+Marker&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css.css" />
     </head>
     <body>
         <div id="top">
-            <a class="title" href="index.html">ProjectName</a>
-            <a class="icon" href="index.html"><img src="home.png" width="30px" height="30px"></a>
-            <a class="icon" href="recipes.html"><img src="recipes.png" width="30px" height="30px"></a>
+            <a class="title" href="index.php">Group 5's Recipe Shop</a>
+            <a class="icon" href="index.php"><img src="home.png" width="30px" height="30px"></a>
+            <a class="icon" href="recipes.php"><img src="recipes.png" width="30px" height="30px"></a>
             <a class="icon" href="list.html"><img src="list.png" width="30px" height="30px"></a>      
             <a class="icon" href="cart.html"><img src="cart.png" width="30px" height="30px"></a>
         </div>
@@ -18,8 +19,16 @@
             <input id="textbox" type="text" placeholder="Search...">      
         </div>
         <div id="bar">
-            <a class="title2">Shopping Cart</a>  
+            <a class="title2">Shopping Cart</a>
         </div>
+        <script> displayCart()</script>
+        <script> if(JSON.parse(localStorage.getItem('cart')).length !=1){
+                document.write('<button  onclick="clearCart()">Clear cart </button>')
+                //document.write('<button > Checkout </button>')
+            }else{
+                document.write("Cart is empty!");
+            }
+        </script>
         <div>
             <button type="button" id="checkoutButton" style="cursor: pointer;">Checkout</button>
         </div>
@@ -33,10 +42,10 @@
                     <input class="input" id="exp" type="text" placeholder="Exp Date (00/00)" style="width:117px;" pattern="[0-9][0-9]/[0-9][0-9]$" required>
                     <input class="input" id="cvv" type="text" placeholder="CVV (000)" style="width:75px;" pattern="[0-9]{3}" required>
                     <input class="input" id="emailAddress" type="text" placeholder="Email (email@example.com)" style="width:200px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                    <input type="submit" id="submit" style="position: absolute; top:325px; left:190px; height:30px; width:80px;">
+                    <input type="submit" id="submit" style="top:325px; left:190px; height:30px; width:80px;">
                 </form>
             </div>
         </div>
-        <script src="JavaScript.js"></script>
+        
     </body>
 </html>
