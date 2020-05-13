@@ -23,6 +23,7 @@ function addToCart(name,price,url){
     var element = {Name:name, Price: price, img:url};
     cart.push(element);
     localStorage.setItem('cart', JSON.stringify(cart));
+    location.reload();
 }
 
 function displayCart(){

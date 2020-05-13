@@ -10,10 +10,9 @@
     <body>
         <div id="top">
             <a class="title" href="index.php">Group 5's Recipe Shop</a>
-            <a class="icon" href="index.php"><img src="home.png" width="30px" height="30px"></a>
-            <a class="icon" href="recipes.php"><img src="recipes.png" width="30px" height="30px"></a>
-            <a class="icon" href="list.html"><img src="list.png" width="30px" height="30px"></a>      
-            <a class="icon" href="cart.html"><img src="cart.png" width="30px" height="30px"></a>
+             <a class="icon" href="recipes.php"  style = "position:absolute; left: 900px; top: 20px"><img src="recipes.png" width="30px" height="30px"></a>
+            <a class="icon" href="list.html" style = "position:absolute; left: 1000px; top: 20px"><img src="list.png" width="30px" height="30px"></a>      
+            <a class="icon" href="cart.html" style = "position:absolute; left: 1100px; top: 20px"><img src="cart.png" width="30px" height="30px"></a>
         </div>
         <div id="search">
             <input id="textbox" type="text" placeholder="Search...">      
@@ -23,10 +22,10 @@
         </div>
         <script> displayCart()</script>
         <script> if(JSON.parse(localStorage.getItem('cart')).length !=1){
-                document.write('<button  onclick="clearCart()">Clear cart </button>')
+                document.write('<button onclick="clearCart()">Clear cart </button>')
                 //document.write('<button > Checkout </button>')
             }else{
-                document.write("Cart is empty!");
+                document.write("<a class = 'checkoutPopup'>Cart is empty! </a>");
             }
         </script>
         <div>

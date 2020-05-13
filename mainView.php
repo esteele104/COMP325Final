@@ -54,7 +54,10 @@
     <button style ="font-size: 120%;" class="tablinks" onclick="document.location = 'index.php'"><i class="fas fa-home"></i></button> 
   <button class="tablinks" onclick="openCity(event, 'Recipes')">Recipes</button>
   <button class="tablinks" onclick="openCity(event, 'Store')">Store</button>
-    <button style ="font-size: 120%;" class="tablinks" onclick="openCity(event, 'Cart')"><i class="fas fa-shopping-cart"></i></button> 
+    <button style ="font-size: 120%;" class="tablinks" onclick="openCity(event, 'Cart')"><i class="fas fa-shopping-cart" style="font-size:60px"></i></button>
+     <button class="tablinks" href="produce.php">Produce</button>
+            <a class="section" href="meat.php">Meat</a>
+            <a class="section" href="dairy.php">Dairy</a>
 </div>
     <div id="Recipes" class="tabcontent">
   <h3>All Recipes</h3>

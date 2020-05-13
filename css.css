@@ -44,6 +44,7 @@
     padding:15px;
     margin-top:40px;
     text-align:center;
+    height: 70px;
 }
 
 .section{
@@ -64,10 +65,10 @@
 }
 
 .btn{
-  background-color: #4CAF50; /* Green */
+  background-color: #b31111;
   color: white;
-  padding: 15px 32px;
-  text-align: right;
+  padding: 5px 25px;
+  text-align:center;
   display: inline-grid;
   font-size: 10px;
   position: relative;
@@ -94,6 +95,7 @@ h1{
 /* Hide the images by default */
 .mySlides {
   display: none;
+    text-align: center;
 }
 
 /* Next & previous buttons */
@@ -175,4 +177,49 @@ h1{
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+/* Style the tab */
+.tab {
+  overflow:hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+    width: 1246.5;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #b31111;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 73px;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #cbc;
+}
+
+.cart-pos {
+  position: absolute;
+  left: 1150px;
+  top: 15px
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }

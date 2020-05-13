@@ -2,6 +2,7 @@
     include_once ".\connect.php"
 ?>
 <script src="scripts.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <!DOCTYPE html>
 <html>
@@ -17,21 +18,26 @@
     <body>
         <div id="top">
             <a class="title" href="index.php">Group 5's Recipe Shop</a>
-            <a class="icon" href="index.php"><img src="home.png" width="30px" height="30px"></a>
-            <a class="icon" href="recipes.php"><img src="recipes.png" width="30px" height="30px"></a>
-            <a class="icon" href="list.html"><img src="list.png" width="30px" height="30px"></a>      
-            <a class="icon" href="cart.html"><img src="cart.png" width="30px" height="30px"></a>
+             <a class="icon" href="recipes.php"  style = "position:absolute; left: 900px; top: 20px"><img src="recipes.png" width="30px" height="30px"></a>
+            <a class="icon" href="list.html" style = "position:absolute; left: 1000px; top: 20px"><img src="list.png" width="30px" height="30px"></a>      
+            <a class="icon" href="cart.html" style = "position:absolute; left: 1100px; top: 20px"><img src="cart.png" width="30px" height="30px"></a>
         </div>
+        <div id="cart-num" class = "cart-pos" style = "font-family: 'Open Sans', sans-serif;color:#b31111;font-weight: bold;"></div>
+        <script>
+            var cart = JSON.parse(localStorage.getItem('cart'));
+            var numToDisaply = cart.length;
+            document.getElementById("cart-num").innerHTML = numToDisaply;
+        </script>
         <div id="search">
             <input id="textbox" type="text" placeholder="Search...">      
         </div>
-        <div id="bar">
-            <a class="section" href="produce.php">Produce</a>
-            <a class="section" href="meat.php">Meat</a>
-            <a class="section" href="dairy.php">Dairy</a>
-            <a class="section" href="bakery.php">Bakery</a>
-            <a class="section" href="beverages.php">Beverages</a>
-            <a class="section" href="more.php">More</a>  
+        <div class="tab">
+            <button class="section" onclick="window.location.href ='produce.php'">Produce</button>
+            <button class="section" onclick="window.location.href = 'meat.php'">Meat</button>
+            <button class="section" onclick="window.location.href = 'dairy.php'">Dairy</button>
+            <button class="section active" onclick="window.location.href = 'bakery.php'">Bakery</button>
+            <button class="section" onclick="window.location.href = 'beverages.php'">Beverages</button>
+            <button class="section" onclick="window.location.href = 'more.php'">More</button>   
         </div>
         <?php
         
@@ -47,7 +53,7 @@ if($result->num_rows > 0){
     {
         echo '<img src=',$r["Image"],' height = "80" width = "80">';
         echo "<a>",$r["Name"]," | Price: $",$r["Price"],"</a>";
-        echo '<button class = "btn" onclick="addToCart(',"'",$r["Name"],"'",",",$r["Price"],",","'",$r["Image"],"'",')"> Add to Cart </button>';
+        echo '<button class = "btn" onclick="addToCart(',"'",$r["Name"],"'",",",$r["Price"],",","'",$r["Image"],"'",')"><i class="fas fa-plus" style="font-size:15px;"></i> Add to Cart </button>';
         echo "<br>";
     }
 }
