@@ -25,26 +25,62 @@ function addToCart(name,price,url){
     localStorage.setItem('cart', JSON.stringify(cart));
     location.reload();
 }
+var searchStr = "";
+function setSearchStr(){
+    searchStr =document.getElementById('textbox').value;
+    localStorage.setItem('str',searchStr);
+}
+
+function displaySearchItems() { 
+    searchStr = localStorage.getItem('str');
+    var items = JSON.parse(localStorage.getItem('allItems')); 
+    searchStr = searchStr.toLowerCase();
+    console.log(searchStr);
+    document.write('<div class ="row">');
+    for (i = 0; i < items.length; i++) {
+        var itemStr = items[i].Name.toLowerCase();
+        if(itemStr.includes(searchStr)){
+            document.write('<div class ="column">');
+            document.write('<img src='+'"'+items[i].img+'"'+' height = "120" width = "120">');
+            document.write("<br>");
+            document.write('<a>'+''+items[i].Name+' | Price: $'+''+items[i].Price+'');
+            document.write("<br>");
+            document.write('<button class = "btn" onclick="addToCart('+"'"+items[i].Name+"'"+","+"'"+items[i].Price+"'"+","+"'"+items[i].img+"'"+')"><i class="fas fa-plus" style="font-size:15px;"></i> Add to Cart </button>');
+            document.write('</div>');
+            document.write("<br>");
+           
+        }
+    }
+    document.write('</div>');
+}
 
 function displayCart(){
     var total=0;
     var cart = JSON.parse(localStorage.getItem('cart')); 
     console.log(cart);
     var i;
+    document.write('<div class ="row">');
     for (i = 1; i < cart.length; i++) {
       var str = cart[i].Name;
       var pric = cart[i].Price;
         var pic = cart[i].img;
         total+=pric;
+        document.write('<div class ="column">');
       document.write('<img src='+pic+' height = "80" width = "80">');
+        document.write("<br>");
         document.write("<a>"+str+' : $'+pric+"</a>");
-      document.write('<button onclick="removeItem('+"'"+str+"'"+')"'+'>Remove from cart</button>');
+        document.write("<br>");
+      document.write('<button class = "cartBtn" onclick="removeItem('+"'"+str+"'"+')"'+'>Remove from cart</button>');
       document.write("<br>");
+        document.write('</div>');
         
     }
+    document.write('</div>');
     if(cart.length>1){
+        document.write("<br>");
         document.write("<a>Total is: $"+total+"</a>");
     }
+    document.write("<br>");
 }
 
 function removeItem(name){
@@ -107,4 +143,6 @@ document.querySelector('.close').addEventListener('click', function(){
 document.getElementById(form).onsumbit = function(){
     document.querySelector('.checkoutPopup').style.display = 'none';
 }
+
+
 

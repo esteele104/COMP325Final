@@ -22,8 +22,10 @@
         <div id="cart-num" class = "cart-pos" style = "font-family: 'Open Sans', sans-serif;color:#b31111;font-weight: bold;"></div>
         <script>
             var cart = JSON.parse(localStorage.getItem('cart'));
-            var numToDisaply = cart.length;
-            document.getElementById("cart-num").innerHTML = numToDisaply;
+            var numToDisaply = cart.length-1;
+            if(numToDisaply >0){
+                document.getElementById("cart-num").innerHTML = numToDisaply;
+            }
         </script>
         <div id="search">
             <input id="textbox" type="text" placeholder="Search...">      

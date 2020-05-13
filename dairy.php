@@ -22,11 +22,15 @@
         <div id="cart-num" class = "cart-pos" style = "font-family: 'Open Sans', sans-serif;color:#b31111;font-weight: bold;"></div>
         <script>
             var cart = JSON.parse(localStorage.getItem('cart'));
-            var numToDisaply = cart.length;
-            document.getElementById("cart-num").innerHTML = numToDisaply;
+            var numToDisaply = cart.length-1;
+            if(numToDisaply >0){
+                document.getElementById("cart-num").innerHTML = numToDisaply;
+            }
         </script>
         <div id="search">
-            <input id="textbox" type="text" placeholder="Search...">      
+            <input id="textbox" type="text"
+        name="search" placeholder="Search items.."> 
+            <button class = "searchBtn" onclick="setSearchStr(); window.location.href ='searchResults.html'"> Search</button>
         </div>
         <div class="tab">
             <button class="section" onclick="window.location.href ='produce.php'">Produce</button>
@@ -47,13 +51,20 @@
 
 if($result->num_rows > 0){
    //Loop through all our records and add them to our array
+   echo '<div class = "row">';
+   //Loop through all our records and add them to our array
     while($r = $result->fetch_assoc())
     {
+        echo '<div class = "column">';
         echo '<img src=',$r["Image"],' height = "80" width = "80">';
+        echo "<br>";
         echo "<a>",$r["Name"]," | Price: $",$r["Price"],"</a>";
+        echo "<br>";
         echo '<button class = "btn" onclick="addToCart(',"'",$r["Name"],"'",",",$r["Price"],",","'",$r["Image"],"'",')"><i class="fas fa-plus" style="font-size:15px;"></i> Add to Cart </button>';
+        echo '</div>';
         echo "<br>";
     }
+    echo '</div>';
 }
     $conn->close();
     ?>
