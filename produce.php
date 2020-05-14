@@ -29,7 +29,7 @@
         </script>
         <div id="search">
             <input id="textbox" type="text"
-        name="search" placeholder="Search items.."> 
+        name="search" placeholder="Search items.." onkeyup = "getKey(event)"> 
             <button class = "searchBtn" onclick="setSearchStr(); window.location.href ='searchResults.html'"> Search</button>
         </div>
         <div class="tab">
@@ -62,7 +62,6 @@ if($result->num_rows > 0){
         echo "<br>";
         echo '<button class = "btn" onclick="addToCart(',"'",$r["Name"],"'",",",$r["Price"],",","'",$r["Image"],"'",')"><i class="fas fa-plus" style="font-size:15px;"></i> Add to Cart </button>';
         echo '</div>';
-        echo "<br>";
     }
     echo '</div>';
 }

@@ -29,6 +29,13 @@ var searchStr = "";
 function setSearchStr(){
     searchStr =document.getElementById('textbox').value;
     localStorage.setItem('str',searchStr);
+    window.location.href ='searchResults.html';
+}
+function getKey(e)
+{
+    if(e.keyCode == 13){
+    setSearchStr();
+    }
 }
 
 function displaySearchItems() { 
@@ -47,7 +54,6 @@ function displaySearchItems() {
             document.write("<br>");
             document.write('<button class = "btn" onclick="addToCart('+"'"+items[i].Name+"'"+","+"'"+items[i].Price+"'"+","+"'"+items[i].img+"'"+')"><i class="fas fa-plus" style="font-size:15px;"></i> Add to Cart </button>');
             document.write('</div>');
-            document.write("<br>");
            
         }
     }
@@ -129,6 +135,21 @@ function addRecipeToCart(recipeName){
     console.log(JSON.parse(localStorage.getItem('cart'))); 
 }
 
+function checkOut(){
+    var orderedItems = JSON.parse(localStorage.getItem('cart'));
+    localStorage.setItem('orderedItems',JSON.stringify(orderedItems));
+    var i;
+    var formData = document.getElementsByTagName("form");
+    var formData2 = document.getElementsByClassName("input");
+    for(i=0; i< formData2.length; i++){
+        console.log(formData2[i].value);
+    }
+    var userInfo = {Name:formData2[0].value, Email: formData2[4].value};
+    localStorage.setItem('userInfo',JSON.stringify(userInfo));
+    clearCart();
+}
+
+/*
 var checkoutButton = document.getElementById("checkoutButton");
 var submit = document.getElementById("submit");
 
@@ -142,7 +163,9 @@ document.querySelector('.close').addEventListener('click', function(){
 
 document.getElementById(form).onsumbit = function(){
     document.querySelector('.checkoutPopup').style.display = 'none';
+    console.log(document.getElementById(form));
 }
+*/
 
 
 

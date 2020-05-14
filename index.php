@@ -101,8 +101,8 @@ if($result2->num_rows > 0){
         
         <div id="search">
             <input id="textbox" type="text"
-        name="search" placeholder="Search items.."> 
-            <button class = "searchBtn" onclick="setSearchStr(); window.location.href ='searchResults.html'"> Search</button>
+        name="search" placeholder="Search items.." onkeyup = "getKey(event)"> 
+            <button class = "searchBtn" onclick="setSearchStr()"> Search</button>
         </div>
         <div class="tab">
             <button class="section" onclick="window.location.href ='produce.php'">Produce</button>
@@ -127,6 +127,9 @@ if($result2->num_rows > 0){
 
 
 if($result->num_rows > 0){
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
     echo '<div class="slideshow-container">';
    //Loop through all our records and add them to our array
     while($r = $result->fetch_assoc())
@@ -134,8 +137,7 @@ if($result->num_rows > 0){
                 
           
        echo '<div class="mySlides fade">
-            <img src=',$r["Image"],' style="width:30%">
-            <div class="text">Caption Text</div>
+            <img src=',$r["Image"],' style="width:300; height: 300">
           </div>';
     }
     echo '</div>';
